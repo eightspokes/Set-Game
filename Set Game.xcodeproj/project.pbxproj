@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300501F5299DBDDD00E380E3 /* squiggly.png in Resources */ = {isa = PBXBuildFile; fileRef = 300501F4299DBDDD00E380E3 /* squiggly.png */; };
 		30707952299A5FF000EBD296 /* Set_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30707951299A5FF000EBD296 /* Set_GameApp.swift */; };
-		30707954299A5FF000EBD296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30707953299A5FF000EBD296 /* ContentView.swift */; };
 		30707956299A5FF500EBD296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30707955299A5FF500EBD296 /* Assets.xcassets */; };
 		30707959299A5FF500EBD296 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30707958299A5FF500EBD296 /* Preview Assets.xcassets */; };
+		30707963299A678400EBD296 /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30707962299A678400EBD296 /* SetModel.swift */; };
+		30707965299AD44C00EBD296 /* SetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30707964299AD44C00EBD296 /* SetViewModel.swift */; };
+		30707968299DB97300EBD296 /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 30707967299DB97300EBD296 /* PureSwiftUI */; };
+		30DF0ACB29B693BC00D11837 /* DiamondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0ACA29B693BC00D11837 /* DiamondView.swift */; };
+		30F0016429A5474600C9C8F8 /* SquigglyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F0016329A5474600C9C8F8 /* SquigglyView.swift */; };
+		30F0016629A5491B00C9C8F8 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F0016529A5491B00C9C8F8 /* SetGameView.swift */; };
+		30F0016829A5676700C9C8F8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F0016729A5676700C9C8F8 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300501F4299DBDDD00E380E3 /* squiggly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squiggly.png; sourceTree = "<group>"; };
 		3070794E299A5FF000EBD296 /* Set Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Set Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30707951299A5FF000EBD296 /* Set_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_GameApp.swift; sourceTree = "<group>"; };
-		30707953299A5FF000EBD296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30707955299A5FF500EBD296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30707958299A5FF500EBD296 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30707962299A678400EBD296 /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
+		30707964299AD44C00EBD296 /* SetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewModel.swift; sourceTree = "<group>"; };
+		30DF0ACA29B693BC00D11837 /* DiamondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondView.swift; sourceTree = "<group>"; };
+		30F0016329A5474600C9C8F8 /* SquigglyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquigglyView.swift; sourceTree = "<group>"; };
+		30F0016529A5491B00C9C8F8 /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
+		30F0016729A5676700C9C8F8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30707968299DB97300EBD296 /* PureSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +65,12 @@
 		30707950299A5FF000EBD296 /* Set Game */ = {
 			isa = PBXGroup;
 			children = (
+				30707961299A675F00EBD296 /* View */,
+				30707960299A674E00EBD296 /* ViewModel */,
+				3070795F299A673800EBD296 /* Model */,
 				30707951299A5FF000EBD296 /* Set_GameApp.swift */,
-				30707953299A5FF000EBD296 /* ContentView.swift */,
 				30707955299A5FF500EBD296 /* Assets.xcassets */,
+				300501F4299DBDDD00E380E3 /* squiggly.png */,
 				30707957299A5FF500EBD296 /* Preview Content */,
 			);
 			path = "Set Game";
@@ -65,6 +82,33 @@
 				30707958299A5FF500EBD296 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3070795F299A673800EBD296 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30707962299A678400EBD296 /* SetModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30707960299A674E00EBD296 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30707964299AD44C00EBD296 /* SetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30707961299A675F00EBD296 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30F0016329A5474600C9C8F8 /* SquigglyView.swift */,
+				30F0016529A5491B00C9C8F8 /* SetGameView.swift */,
+				30F0016729A5676700C9C8F8 /* CardView.swift */,
+				30DF0ACA29B693BC00D11837 /* DiamondView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +127,9 @@
 			dependencies = (
 			);
 			name = "Set Game";
+			packageProductDependencies = (
+				30707967299DB97300EBD296 /* PureSwiftUI */,
+			);
 			productName = "Set Game";
 			productReference = 3070794E299A5FF000EBD296 /* Set Game.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 30707945299A5FF000EBD296;
+			packageReferences = (
+				30707966299DB97300EBD296 /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
+			);
 			productRefGroup = 3070794F299A5FF000EBD296 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +177,7 @@
 			files = (
 				30707959299A5FF500EBD296 /* Preview Assets.xcassets in Resources */,
 				30707956299A5FF500EBD296 /* Assets.xcassets in Resources */,
+				300501F5299DBDDD00E380E3 /* squiggly.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30707954299A5FF000EBD296 /* ContentView.swift in Sources */,
+				30707965299AD44C00EBD296 /* SetViewModel.swift in Sources */,
+				30F0016429A5474600C9C8F8 /* SquigglyView.swift in Sources */,
+				30DF0ACB29B693BC00D11837 /* DiamondView.swift in Sources */,
+				30707963299A678400EBD296 /* SetModel.swift in Sources */,
 				30707952299A5FF000EBD296 /* Set_GameApp.swift in Sources */,
+				30F0016829A5676700C9C8F8 /* CardView.swift in Sources */,
+				30F0016629A5491B00C9C8F8 /* SetGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30707966299DB97300EBD296 /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeSlicing/pure-swift-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30707967299DB97300EBD296 /* PureSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30707966299DB97300EBD296 /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
+			productName = PureSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30707946299A5FF000EBD296 /* Project object */;
 }

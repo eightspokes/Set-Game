@@ -23,11 +23,7 @@ struct SetModel{
     enum Quantities: CaseIterable {
         case one, two, three
     }
-    
-    
-    
-    
-    
+
     private (set) var cards: [Card]
     
     init(){
@@ -50,15 +46,42 @@ struct SetModel{
     struct Card: Identifiable, Hashable{
         let id: Int
         var isMached: Bool
+        var isSelected: Bool = false
         let color: Colors
         let shape: Shapes
         let shading: Shadings
         let quantity: Quantities
+        
         
     }
     
     func getCards() -> [Card]{
         return cards
     }
+    
+    
+    mutating func choose(_ card: Card){
+        let index = index(of: card)
+        if let index{
+            cards[index].isSelected.toggle()
+        } else{
+            fatalError("Could not find the card")
+        }
+        
+        
+        
+        print("Card: \(card)")
+        print()
+       
+    }
+    func index(of card : Card) -> Int? {
+        for index in 0..<cards.count{
+            if cards[index].id == card.id{
+                return index
+            }
+        }
+        return nil // !bogus
+    }
+    
     
 }

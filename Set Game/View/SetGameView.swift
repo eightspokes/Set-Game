@@ -14,9 +14,13 @@ struct SetGameView: View {
         VStack(spacing: 0){
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 20){
-                    ForEach(game.cards, id: \.self){ item in
-                        CardView(card: item)
+                    ForEach(game.cards){ card in
+                        CardView(card: card)
                             .aspectRatio(2/3,contentMode: .fit)
+                            .onTapGesture {
+                                game.choose(card)
+                            }
+                        
                     }
                 }
             }

@@ -10,6 +10,14 @@ import SwiftUI
 
 class SetViewModel: ObservableObject{
     
+    
+    
+    // MARK: - Intent(s)
+    
+    func choose(_ card: SetModel.Card){
+        model.choose(card)
+    }
+    
     public static func interpretColor(colors: SetModel.Colors) -> Color {
         switch colors {
             

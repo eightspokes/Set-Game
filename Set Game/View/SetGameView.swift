@@ -10,8 +10,12 @@ import SwiftUI
 struct SetGameView: View {
     @ObservedObject var game : SetViewModel
     var body: some View {
-       
+        
         VStack(spacing: 0){
+            Text("Set Game")
+                .font(.largeTitle.bold())
+                .padding(.vertical,30)
+                
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 20){
                     ForEach(game.cards){ card in
@@ -24,8 +28,29 @@ struct SetGameView: View {
                     }
                 }
             }
+            
+            HStack(){
+                Button{
+                    
+                }label: {
+                    Image(sfSymbol: "plus")
+                }
+                Spacer()
+                Button{
+                    
+                }label: {
+                    Image(sfSymbol: "square.and.arrow.up.on.square")
+                }
+                
+            }
+            .padding()
+            .padding(.horizontal, 20)
+            
+            
+            
         }
         .padding()
+        .ignoresSafeArea()
     }
 }
 

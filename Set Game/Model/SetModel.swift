@@ -25,9 +25,11 @@ struct SetModel{
     }
 
     private (set) var cards: [Card]
+    private var chosenCards: [Card]
     
     init(){
         cards = Array<Card>()
+        chosenCards = Array<Card>()
         var id = 1
         for color in SetModel.Colors.allCases{
             for shape in SetModel.Shapes.allCases{
@@ -61,26 +63,39 @@ struct SetModel{
     
     
     mutating func choose(_ card: Card){
-        let index = index(of: card)
-        if let index{
-            cards[index].isSelected.toggle()
-        } else{
+        let indexInCards = index(of: card, arrayOfCards: cards)
+        let indexInChosenCards = index(of: card, arrayOfCards: chosenCards)
+        if let indexInCards{
+                    
+            if cards[indexInCards].isSelected && chosenCards.count < 3{
+                if let indexInChosenCards{
+                    chosenCards.remove(at: indexInChosenCards)
+                }
+                cards[indexInCards].isSelected = false
+            }else{
+                if chosenCards.count < 3{
+                    if indexInChosenCards == nil {
+                        chosenCards.append(card)
+                        cards[indexInCards].isSelected = true
+                        print("true")
+                    }
+                }
+            }
+        }else{
             fatalError("Could not find the card")
         }
         
         
-        
-        print("Card: \(card)")
-        print()
+       
        
     }
-    func index(of card : Card) -> Int? {
-        for index in 0..<cards.count{
-            if cards[index].id == card.id{
+    func index(of card : Card, arrayOfCards: [Card]) -> Int? {
+        for index in 0..<arrayOfCards.count{
+            if arrayOfCards[index].id == card.id{
                 return index
             }
         }
-        return nil // !bogus
+        return nil
     }
     
     

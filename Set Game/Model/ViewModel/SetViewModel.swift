@@ -10,7 +10,7 @@ import SwiftUI
 
 class SetViewModel: ObservableObject{
     
-    
+    typealias Card = SetModel.Card
     
     // MARK: - Intent(s)
     
@@ -56,7 +56,12 @@ class SetViewModel: ObservableObject{
     }
     
     @Published private var model: SetModel = createSetGame()
-    var cards: [SetModel.Card]{
+    
+    func restartGame(){
+        model = SetViewModel.createSetGame()
+    }
+    
+    var cards: [Card]{
         model.cards
     }
 

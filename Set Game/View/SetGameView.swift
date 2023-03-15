@@ -9,37 +9,59 @@ import SwiftUI
 
 struct SetGameView: View {
     @ObservedObject var game : SetViewModel
+    @State var cardsShown: Int = 12
+    
+    func dealThreeCards(){
+        if cardsShown < 81{
+            cardsShown += 3
+        }
+    }
+    
     var body: some View {
-        
+       
         VStack(spacing: 0){
+            
             Text("Set Game")
                 .font(.largeTitle.bold())
                 .padding(.vertical,30)
-                
-            ScrollView{
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 20){
-                    ForEach(game.cards){ card in
-                        CardView(card: card)
-                            .aspectRatio(2/3,contentMode: .fit)
-                            .onTapGesture {
-                                game.choose(card)
-                            }
-                        
-                    }
-                }
-            }
+            Spacer()
             
+            AspectVGrid(items: game.cards, aspectRatio: 2/3 , cardsShown: self.cardsShown, content: { card in
+                CardView(card: card)
+                    .onTapGesture {
+                        game.choose(card)
+                    }
+                
+                
+            })
+            
+            Spacer()
             HStack(){
                 Button{
                     
+                    game.restartGame()
+                    
                 }label: {
-                    Image(sfSymbol: "plus")
+                    Image(sfSymbol: "play.circle")
+                        .titleFont()
                 }
                 Spacer()
                 Button{
-                    
+                    dealThreeCards()
                 }label: {
-                    Image(sfSymbol: "square.and.arrow.up.on.square")
+                    HStack(spacing: 0){
+                        let remaining = 81 - cardsShown
+                        
+                        Text("3")
+                        
+                        .font(.footnote)
+                        Image(sfSymbol: "square.and.arrow.up.on.square")
+                            .titleFont()
+                        
+                    }
+                    
+                  
+                    
                 }
                 
             }

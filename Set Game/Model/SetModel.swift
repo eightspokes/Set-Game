@@ -41,7 +41,7 @@ struct SetModel{
                 }
             }
         }
-        //cards.shuffle()
+        cards.shuffle()
     }
     
     

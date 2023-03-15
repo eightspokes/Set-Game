@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		300501F5299DBDDD00E380E3 /* squiggly.png in Resources */ = {isa = PBXBuildFile; fileRef = 300501F4299DBDDD00E380E3 /* squiggly.png */; };
+		302661B729C252BA0052E09F /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302661B629C252BA0052E09F /* AspectVGrid.swift */; };
 		30707952299A5FF000EBD296 /* Set_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30707951299A5FF000EBD296 /* Set_GameApp.swift */; };
 		30707956299A5FF500EBD296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30707955299A5FF500EBD296 /* Assets.xcassets */; };
 		30707959299A5FF500EBD296 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30707958299A5FF500EBD296 /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		300501F4299DBDDD00E380E3 /* squiggly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squiggly.png; sourceTree = "<group>"; };
+		302661B629C252BA0052E09F /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		3070794E299A5FF000EBD296 /* Set Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Set Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30707951299A5FF000EBD296 /* Set_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_GameApp.swift; sourceTree = "<group>"; };
 		30707955299A5FF500EBD296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				30F0016329A5474600C9C8F8 /* SquigglyView.swift */,
 				30F0016529A5491B00C9C8F8 /* SetGameView.swift */,
 				30F0016729A5676700C9C8F8 /* CardView.swift */,
+				302661B629C252BA0052E09F /* AspectVGrid.swift */,
 				30DF0ACA29B693BC00D11837 /* DiamondView.swift */,
 			);
 			path = View;
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302661B729C252BA0052E09F /* AspectVGrid.swift in Sources */,
 				30707965299AD44C00EBD296 /* SetViewModel.swift in Sources */,
 				30F0016429A5474600C9C8F8 /* SquigglyView.swift in Sources */,
 				30DF0ACB29B693BC00D11837 /* DiamondView.swift in Sources */,

@@ -32,9 +32,9 @@ struct CardView: View {
     var spacing: Float{
         let isOval = card.shape == SetModel.Shapes.oval
         if isOval == true{
-            return 30
+            return 13
         }else{
-            return 0
+            return -7
         }
     }
     var body: some View {

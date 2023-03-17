@@ -24,7 +24,7 @@ struct Squiggly: Shape{
         
         var curves = [Curve]()
         curves.append(
-            Curve(p2, g[0,12], g[8,9])
+            Curve(p2, g[0,13], g[8,9])
         )
         curves.append(
             Curve(p3, g[25,17], g[33,14])

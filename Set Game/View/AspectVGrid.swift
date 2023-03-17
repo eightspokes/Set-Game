@@ -10,13 +10,12 @@ import SwiftUI
 struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiable {
     var items : [Item]
     var aspectRatio: CGFloat
-    var cardsShown: Int
     var content: (Item) -> ItemView
     var body: some View {
       GeometryReader { geometry in
-        let width:  CGFloat = widthThatFits(itemCount: cardsShown, in: geometry.size, itemAspectRatio: aspectRatio)
+          let width:  CGFloat = widthThatFits(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio)
         LazyVGrid(columns: [adaptiveGridItem(width: width)], spacing: 0){
-            ForEach(0 ..< cardsShown, id: \.self){ index in
+            ForEach(0 ..< items.count, id: \.self){ index in
                 content(items[index])
                     .aspectRatio(aspectRatio , contentMode: .fit)
       

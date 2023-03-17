@@ -14,7 +14,7 @@ class SetViewModel: ObservableObject{
     
     // MARK: - Intent(s)
     
-    func choose(_ card: SetModel.Card){
+    func choose(_ card: SetModel.Card) -> Bool {
         model.choose(card)
     }
     
@@ -61,10 +61,24 @@ class SetViewModel: ObservableObject{
         model = SetViewModel.createSetGame()
     }
     
-    var cards: [Card]{
-        model.cards
+    var cardsSelected: Int {
+        model.chosenCards.count
+    }
+    
+    var cardsInDeck: [Card]{
+        model.cardsInDeck
+    }
+    var cardsInPlay: [Card]{
+        model.cardsInPlay
     }
 
+    func dealThreeCards(){
+        model.dealThreeCars()
+    }
+    func replaceSetCards(){
+        model.replaceSetCards()
+    }
+    
     private static func createSetGame() -> SetModel{
         return SetModel()
     }

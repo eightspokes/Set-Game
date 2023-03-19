@@ -6,45 +6,41 @@
 //
 import SwiftUI
 
-struct ItsASet: View{
+
+struct IsSetMessage : View{
+    var message: String
+    var color: Color
     var body: some View{
-        Text("It's a set!!!")
+        Text(message)
             .font(.title).bold()
-            .foregroundColor(.green)
-    }
-}
-struct ItsNotASet: View{
-    var body: some View{
-        Text("It's NOT a set!!!")
-            .font(.title).bold()
-            .foregroundColor(.red)
+            .foregroundColor(color)
     }
 }
 struct SetGameView: View {
     @ObservedObject var game : SetViewModel
     @State var showSet = false
     @State var showNoSet = false
-
+    private let delayTime: Float = 3
+    
     var body: some View {
         
-       
+        
         VStack(spacing: 0){
             
             Text("Set Game")
                 .font(.largeTitle.bold())
                 .padding(.vertical,30)
             if showSet{
-                ItsASet()
+                IsSetMessage(message: "It is a Set!", color: .green)
             }
             if showNoSet{
-                ItsNotASet()
+                IsSetMessage(message: "It is NOT a Set!", color: .red)
             }
             Spacer()
             
             AspectVGrid(items: game.cardsInPlay, aspectRatio: 2/3, content: { card in
-                CardView(card: card)
+                CardView(card: card, showSet: showSet, showNoSet: showNoSet)
                     .onTapGesture {
-                        
                         let isSet: Bool = game.choose(card)
                         print("Chosen Card Num \(game.cardsSelected)")
                         if(game.cardsSelected == 3  ){
@@ -55,24 +51,20 @@ struct SetGameView: View {
                                 showNoSet = true
                                 print("It's not a set!")
                             }
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                                 game.replaceSetCards()
                                 showSet = false
                                 showNoSet = false
                             }
-                            
                         }
-                        
                     }
-                
             })
             
             Spacer()
             HStack(){
                 Button{
                     game.restartGame()
-               
+                    
                     
                 }label: {
                     Image(sfSymbol: "play.circle")
@@ -86,14 +78,12 @@ struct SetGameView: View {
                         
                         Text("3")
                         
-                        .font(.footnote)
+                            .font(.footnote)
                         Image(sfSymbol: "square.and.arrow.up.on.square")
                             .titleFont()
                         
                     }
-
                 }
-                
             }
             .padding()
             .padding(.horizontal, 20)
@@ -106,7 +96,7 @@ struct SetGameView: View {
 
 struct SetGameView_Previews: PreviewProvider {
     static var previews: some View {
-        var game = SetViewModel()
+        let game = SetViewModel()
         SetGameView(game: game)
     }
 }

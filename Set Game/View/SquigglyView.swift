@@ -47,7 +47,7 @@ struct Squiggly: Shape{
             
         }
         return path
-
+        
     }
 }
 

@@ -50,7 +50,6 @@ struct SetModel{
                 cardsInDeck.append(cards[i])
             }
         }
-        
     }
     
     struct Card: Identifiable, Hashable{
@@ -80,6 +79,7 @@ struct SetModel{
                     if indexInChosenCards == nil {
                         chosenCards.append(card)
                         cardsInPlay[indexInCards].isSelected = true
+
                     }
                 }
             }
@@ -96,7 +96,6 @@ struct SetModel{
                 for card in chosenCards{
                     let index = index(of: card, arrayOfCards: cardsInPlay)
                     if let index{
-                        print("Removing card")
                         if cardsInDeck.count > 0 {
                             cardsInPlay[index] = cardsInDeck.removeLast()
                         }else{
@@ -106,21 +105,17 @@ struct SetModel{
                 }
             }
         }
-        print("Deselecting chosen cards ")
         deselectChosenCards()
         chosenCards.removeAll()
     }
     
-    
     mutating func dealThreeCars(){
         if(cardsInDeck.count >= 3){
-            for i in 0...2 {
-                cardsInPlay.append(cardsInDeck[i])
-                cardsInDeck.remove(at: i)
+            for _ in 0...2 {
+                cardsInPlay.append(cardsInDeck.removeLast())
             }
         }
     }
-    
     
     mutating func  deselectChosenCards(){
         for i in 0 ..< chosenCards.count{
@@ -168,7 +163,6 @@ struct SetModel{
         }
     }
    
-
     func index(of card : Card, arrayOfCards: [Card]) -> Int? {
         for index in 0..<arrayOfCards.count{
             if arrayOfCards[index].id == card.id{

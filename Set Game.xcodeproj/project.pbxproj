@@ -69,6 +69,7 @@
 			children = (
 				30707961299A675F00EBD296 /* View */,
 				3070795F299A673800EBD296 /* Model */,
+				30707960299A674E00EBD296 /* ViewModel */,
 				30707951299A5FF000EBD296 /* Set_GameApp.swift */,
 				30707955299A5FF500EBD296 /* Assets.xcassets */,
 				300501F4299DBDDD00E380E3 /* squiggly.png */,
@@ -89,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				30707962299A678400EBD296 /* SetModel.swift */,
-				30707960299A674E00EBD296 /* ViewModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
